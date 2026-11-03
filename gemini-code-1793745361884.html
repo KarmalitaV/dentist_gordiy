@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Dentist Gordiy — Стоматологические курсы под микроскопом</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050507">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#050507;--tx:#F2F0F7;--tx2:rgba(242,240,247,.62);--line:rgba(255,255,255,.09);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100dvh;background:var(--bg);color:var(--tx);font-family:Manrope,system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+.fx{position:fixed;inset:0;z-index:-1;background:radial-gradient(80% 35% at 100% 0%,rgba(92,74,210,.12),transparent 70%),var(--bg)}
+.fx svg{position:absolute;inset:0;width:100%;height:100%}
+.wrap{max-width:480px;margin:0 auto;padding:0 clamp(16px,6vw,24px)}
+[hidden]{display:none!important}
+a{color:inherit;text-decoration:none}
+.glass{background:rgba(18,16,26,.62);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.16);box-shadow:0 12px 30px -12px rgba(0,0,0,.8)}
+.top{display:flex;justify-content:space-between;align-items:center;padding-top:16px}
+.dg{font:800 20px Syne,sans-serif;letter-spacing:.02em}
+.eyebrow{font-size:12px;letter-spacing:.26em;color:var(--tx2);text-transform:uppercase;text-align:center}
+.nav-group{display:flex;align-items:center;gap:12px}
+.nav{min-height:44px;display:flex;align-items:center;font-size:13px;letter-spacing:.04em;color:var(--tx2)}
+.admin-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:var(--tx);padding:6px 12px;border-radius:8px;font-size:12px;cursor:pointer}
+.ln{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:clamp(12px,3dvh,28px)}.ln i{width:28px;height:1px;background:rgba(255,255,255,.4)}
+
+/* Центрирование заголовка */
+h1{margin:24px 0 0;text-align:center}
+.d{display:block;font-size:12px;font-weight:600;letter-spacing:.5em;text-transform:uppercase;color:var(--tx2);text-align:center}
+
+/* Премиум-анимация для надписи GORDIY */
+.g{
+  display:block;
+  margin-top:10px;
+  font-family:Syne,sans-serif;
+  font-weight:800;
+  text-transform:uppercase;
+  font-size:clamp(36px,13vw,64px);
+  line-height:.95;
+  letter-spacing:-.035em;
+  text-align:center;
+  
+  /* Градиентный блеск */
+  background: linear-gradient(
+    110deg,
+    #ffffff 0%,
+    #ffffff 40%,
+    #e2d9ff 50%,
+    #ffffff 60%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  /* Анимация пролетающего блика и мягкого выплывания */
+  animation: shineGlow 6s ease-in-out infinite, riseGordiy 1s cubic-bezier(.16,1,.3,1) both;
+}
+
+@keyframes shineGlow {
+  0% { background-position: 200% center; }
+  35% { background-position: -200% center; }
+  100% { background-position: -200% center; }
+}
+
+@keyframes riseGordiy {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.sub{margin:18px auto 0;font-size:14px;line-height:1.55;color:var(--tx2);max-width:290px;text-align:center}
+.cta2{display:flex;justify-content:center;align-items:center;gap:8px;min-height:44px;margin:12px auto 0;font-size:14px;font-weight:600;color:var(--tx);border-bottom:1px solid rgba(255,255,255,.35);width:fit-content}
+
+.stack{display:flex;flex-direction:column;gap:12px;margin-top:clamp(32px,6dvh,52px)}
+.cw{animation:rise .7s cubic-bezier(.22,1,.36,1) both}.cw:nth-child(2){animation-delay:.08s}.cw:nth-child(3){animation-delay:.16s}
+.card{position:relative;display:block;min-height:118px;padding:22px;border-radius:18px;background:linear-gradient(180deg,#110f17,#0a090e);border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.05);transition:transform .25s cubic-bezier(.22,1,.36,1),border-color .25s}
+.card::before{content:"";position:absolute;left:22px;top:-1px;width:32px;height:1px;background:var(--tx);opacity:.7}
+.card:active{transform:scale(.985);border-color:rgba(255,255,255,.22)}
+.card h2{margin:0;font-weight:600;font-size:clamp(19px,5.6vw,22px);line-height:1.18;letter-spacing:-.02em;color:#fff}
+.desc{margin:8px 0 0;font-size:13px;line-height:1.45;color:var(--tx2);max-width:92%}
+.meta{margin-top:10px;font-size:12px;color:var(--tx2);font-variant-numeric:tabular-nums}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 10px;margin-top:26px}.trust span{padding:8px 12px;border-radius:10px;border:1px solid var(--line);font-size:12px;color:var(--tx2)}
+.sec{margin-top:52px}
+.inc{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.inc div{padding:16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.02);font-size:13px;line-height:1.35}.inc svg{display:block;margin-bottom:12px;color:var(--tx2)}
+.steps{margin:10px 0 0;padding:0;list-style:none}.steps li{display:flex;align-items:center;gap:14px;padding:16px 0;border-top:1px solid var(--line);font-size:14px}.steps li:last-child{border-bottom:1px solid var(--line)}.steps i{width:6px;height:6px;background:var(--tx);opacity:.7}
+.about{display:flex;gap:16px;align-items:center;margin-top:14px;padding:18px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.av{flex:none;width:56px;height:56px;border-radius:14px;display:grid;place-items:center;font:800 24px Syne,sans-serif;border:1px solid rgba(255,255,255,.16);background:#121019}
+.about b{display:block;font-size:15px;margin-bottom:4px}.about span{font-size:13px;line-height:1.45;color:var(--tx2)}
+.foot{margin-top:44px;padding:22px 0 36px;border-top:1px solid var(--line);font-size:12px;color:var(--tx2);display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}}
+.back{width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.16);display:grid;place-items:center}
+.player{position:relative;aspect-ratio:16/9;margin-top:14px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:radial-gradient(circle at 70% 50%,rgba(110,92,235,.14),transparent 55%),repeating-radial-gradient(circle at 70% 50%,transparent 0 22px,rgba(255,255,255,.05) 22px 23px),#09080d}
+.play{position:absolute;left:50%;top:50%;width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:50%;display:grid;place-items:center;color:#fff}
+.pill{position:absolute;left:14px;top:14px;padding:4px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.2);font-size:12px;z-index:2}
+h3{margin:22px 0 0;font-weight:600;font-size:clamp(24px,7.4vw,30px);line-height:1.12;letter-spacing:-.025em}
+.lh{margin:26px 0 6px;text-align:left}
+.les{display:flex;align-items:center;gap:14px;min-height:56px;border-top:1px solid var(--line);font-size:14px;line-height:1.3}
+.les:last-child{border-bottom:1px solid var(--line)}
+.les .n,.les .t{font-size:12px;color:var(--tx2);font-variant-numeric:tabular-nums}.les .n{width:18px}.les span.x{flex:1}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(5,5,7,.92);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border-top:1px solid var(--line);padding:14px 0 calc(14px + env(safe-area-inset-bottom,0px));z-index:10}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.price{font-weight:600;font-size:28px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.buy{min-height:52px;padding:0 clamp(20px,7vw,28px);border:0;border-radius:14px;font:700 14px Manrope,sans-serif;letter-spacing:.02em;color:#08070b;cursor:pointer;background:var(--tx);box-shadow:0 10px 24px -12px rgba(0,0,0,.9)}
+.buy:active{transform:scale(.97)}.buy:disabled{opacity:.6;cursor:default}
+.form{margin-top:28px;display:flex;flex-direction:column;gap:20px}
+label{display:block;margin-bottom:8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tx2)}
+.in{width:100%;min-height:54px;padding:0 16px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:#0c0b11;color:var(--tx);font:400 16px Manrope,sans-serif;outline:none}
+.in:focus{border-color:var(--tx)}
+.err{min-height:18px;margin-top:6px;font-size:13px;color:#ff9fb0}
+.note{font-size:13px;line-height:1.5;color:var(--tx2)}
+.toast{position:fixed;left:50%;bottom:calc(120px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);padding:10px 16px;border-radius:12px;font-size:13px;white-space:nowrap;z-index:9}
+.sheet{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.6);display:flex;align-items:flex-end}
+.sc{width:100%;max-width:480px;margin:0 auto;max-height:82dvh;overflow:auto;padding:12px 24px calc(24px + env(safe-area-inset-bottom,0px));border-radius:20px 20px 0 0;background:#0c0b11;border:1px solid var(--line);animation:up .3s cubic-bezier(.22,1,.36,1)}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+.sc .hd{width:36px;height:4px;border-radius:2px;background:rgba(255,255,255,.2);margin:0 auto 18px}
+.sc h4{margin:0 0 10px;font-size:20px;letter-spacing:-.02em}.sc p{margin:0 0 16px;font-size:14px;line-height:1.55;color:var(--tx2)}
+.ghost{background:none;color:var(--tx);border:1px solid rgba(255,255,255,.2);box-shadow:none}
+.ctr{display:flex;align-items:center;justify-content:center;width:100%;text-decoration:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="fx" aria-hidden="true"><svg viewBox="0 0 390 844" preserveAspectRatio="none" fill="none"><g stroke="rgba(255,255,255,.04)"><path d="M-20 120C90 90 180 190 280 220S400 170 430 130"/><path d="M-20 380C80 350 190 440 290 470S390 430 430 400"/><path d="M-20 660C100 620 200 730 300 760S400 720 430 690"/></g></svg></div>
+
+<main id="home" class="wrap">
+<div class="top">
+  <span class="dg">DG</span>
+  <div class="nav-group">
+    <button class="admin-btn" id="openAdmin" hidden>Admin</button>
+    <a href="#signin" id="navlink" class="nav">Sign in</a>
+  </div>
+</div>
+<div class="ln"><i></i><span class="eyebrow">Courses</span><i></i></div>
+<h1><span class="d">Dentist</span><span class="g">Gordiy</span></h1>
+<p class="sub">Clinical education for dentists, filmed under the microscope.</p>
+<a class="cta2" href="#microscope-0">Watch video <span aria-hidden="true">→</span></a>
+
+<nav class="stack" id="formats" aria-label="Format">
+<div class="cw"><a class="card" href="#webinars"><h2>Webinars</h2><p class="desc">Live clinical sessions, recorded so you can watch any time.</p><div class="meta" id="m_webinars">8 lessons · 9h · $10</div></a></div>
+<div class="cw"><a class="card" href="#microscope"><h2>Practical videos from microscope</h2><p class="desc">Every step of the procedure, filmed at high magnification.</p><div class="meta" id="m_microscope">14 lessons · 6h 20m · $10</div></a></div>
+<div class="cw"><a class="card" href="#cases"><h2>Presentation of cases</h2><p class="desc">Real treatment plans, from diagnosis to follow-up.</p><div class="meta" id="m_cases">10 lessons · 4h 40m · $10</div></a></div>
+</nav>
+<div class="trust"><button class="chip" data-i="refund">30-day refund</button><button class="chip" data-i="life">Lifetime access</button></div>
+<section class="sec"><div class="eyebrow">Your instructor</div><a class="about" href="#doctor"><span class="av">G</span><div><b>Dr. Gordiy</b><span>Practising dentist. Every course is filmed during real clinical work.</span><span id="cred" style="display:block;margin-top:6px;color:var(--tx)"></span></div></a></section>
+<section class="sec"><div class="eyebrow">Support and materials</div><div class="inc"><a class="tile" href="#materials"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><b>PDF materials</b><span>Checklists and templates for every format</span></a><a class="tile" href="#support"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 20l1-4.5A8 8 0 1 1 21 12z"/></svg><b>Direct support</b><span>Ask Dr. Gordiy or join the community</span></a></div></section>
+<section class="sec"><div class="eyebrow">How it works</div><ul class="steps"><li><a href="#formats"><i></i>Choose a format to view course details</a></li><li><a href="#signin" id="st2"><i></i>Create an account and unlock full access</a></li><li><a href="#account"><i></i>Watch on any device and resume where you stopped</a></li></ul></section>
+<div class="foot"><a href="#" data-i="terms">Terms</a><a href="#" data-i="privacy">Privacy</a><a href="#" data-i="refund">Refund policy</a><span>© Dentist Gordiy</span></div>
+</main>
+
+<main id="fmt" class="wrap" style="padding-bottom:60px" hidden>
+<div class="top" style="justify-content:flex-start;gap:14px"><a class="back" href="#" aria-label="Back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a><span class="eyebrow">Format</span></div>
+<div class="player"><a class="play glass" id="pp" href="#" aria-label="Play video"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z"/></svg></a></div>
+<h3 id="ft"></h3><div class="meta" id="fm" style="letter-spacing:.04em"></div>
+<div class="eyebrow lh">What you’ll learn</div><ul class="learn" id="lw"></ul>
+<div class="eyebrow lh">Lessons</div><div id="fl"></div>
+</main>
+
+<main id="les" class="wrap" style="padding-bottom:150px" hidden>
+<div class="top" style="justify-content:flex-start;gap:14px"><a class="back" id="lb" href="#" aria-label="Back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a><span class="eyebrow">Lesson</span></div>
+<div class="player" id="vContainer"><span class="pill" id="lpill">$10</span><div id="videoSlot" style="width:100%;height:100%;display:grid;place-items:center"><button class="play glass" id="lplay" aria-label="Play" style="cursor:pointer"></button></div></div>
+<h3 id="lt"></h3><div class="meta" id="lm" style="letter-spacing:.04em"></div>
+<p class="note" id="ld" style="margin:16px 0 0">Watch the full procedure and the reasoning behind each step, filmed during real clinical work.</p>
+<div class="bar"><div class="wrap"><div id="lp"></div><button class="buy" id="lb2"></button></div></div>
+</main>
+
+<main id="auth" class="wrap" hidden>
+<div class="top" style="justify-content:flex-start;gap:14px"><a class="back" href="#" aria-label="Back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a><span class="eyebrow">Account</span></div>
+<h3 id="at" style="margin-top:36px"></h3><p class="note" id="an" style="margin:10px 0 0"></p>
+<form class="form" id="af" novalidate style="margin-top:22px">
+<div><label for="em">Email</label><input class="in" id="em" type="email" inputmode="email" autocomplete="email"><div class="err" id="ee" role="alert"></div></div>
+<div><label for="pw">Password</label><input class="in" id="pw" type="password" autocomplete="current-password"><div class="err" id="pe" role="alert"></div></div>
+<div class="err" id="fe" role="alert" style="margin:-8px 0"></div>
+<button class="buy" id="sb" type="submit" style="width:100%">Sign in</button>
+<button class="link" id="tg" type="button" style="background:none;border:0;color:var(--tx);cursor:pointer;margin-top:10px">New here? Create account</button>
+</form>
+</main>
+
+<!-- АДМИН-ПАНЕЛЬ -->
+<div class="sheet" id="adminSheet" hidden>
+  <div class="sc">
+    <div class="hd"></div>
+    <h4>Кабинет владельца</h4>
+    <p class="note">Управляйте ценами и ссылками на видео:</p>
+    <form id="adminForm" class="form">
+      <div><label>Цена Webinars ($)</label><input class="in" id="p_webinars" type="number" value="10"></div>
+      <div><label>Видео Webinars (ID/iframe)</label><input class="in" id="v_webinars" type="text"></div>
+      
+      <div><label>Цена Microscope ($)</label><input class="in" id="p_microscope" type="number" value="10"></div>
+      <div><label>Видео Microscope</label><input class="in" id="v_microscope" type="text"></div>
+
+      <div><label>Цена Cases ($)</label><input class="in" id="p_cases" type="number" value="10"></div>
+      <div><label>Видео Cases</label><input class="in" id="v_cases" type="text"></div>
+
+      <button class="buy" type="submit" style="width:100%;margin-top:10px">Сохранить изменения</button>
+      <button class="buy ghost ctr" type="button" id="closeAdmin" style="margin-top:8px">Закрыть</button>
+    </form>
+  </div>
+</div>
+
+<div class="sheet" id="shd" hidden><div class="sc" id="shc" role="dialog" aria-modal="true"></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script>
+var SUPABASE_URL='https://edgamsqxnxazoglhjqsn.supabase.co';
+var SUPABASE_ANON_KEY='sb_publishable_6vD9TQ0B0XloQLHFb_lkvQ_6K77Axcz';
+var CHECKOUT_URL='';
+var ADMIN_EMAIL='karmalita7777@gmail.com';
+
+var sb=(SUPABASE_URL&&window.supabase)?supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY,{auth:{flowType:'pkce'}}):null;
+var S=null,mode='in',$=function(i){return document.getElementById(i)};
+var VIEWS=['home','fmt','les','auth'];
+
+var D={
+  webinars:{t:'Webinars',m:'8 lessons · 9h · $10',b:10, vid:'', l:[['Digital workflow','58:10',10],['Case planning','1:12:30',10]]},
+  microscope:{t:'Practical videos from microscope',m:'14 lessons · 6h 20m · $10',b:10, vid:'', l:[['Ergonomics','08:40',10],['MB2 canal','19:30',10]]},
+  cases:{t:'Presentation of cases',m:'10 lessons · 4h 40m · $10',b:10, vid:'', l:[['Molar retreatment','24:10',10],['Composite','27:00',10]]}
+};
+
+function toast(s){var t=document.createElement('div');t.className='toast glass';t.textContent=s;document.body.appendChild(t);setTimeout(function(){t.remove()},2400)}
+
+function checkAdminAccess() {
+  var isAdmin = S && S.user && S.user.email === ADMIN_EMAIL;
+  $('openAdmin').hidden = !isAdmin;
+}
+
+$('openAdmin').onclick=function(){
+  $('p_webinars').value=D.webinars.b; $('v_webinars').value=D.webinars.vid;
+  $('p_microscope').value=D.microscope.b; $('v_microscope').value=D.microscope.vid;
+  $('p_cases').value=D.cases.b; $('v_cases').value=D.cases.vid;
+  $('adminSheet').hidden=false;
+};
+$('closeAdmin').onclick=function(){$('adminSheet').hidden=true};
+
+$('adminForm').onsubmit=function(e){
+  e.preventDefault();
+  D.webinars.b=+$('p_webinars').value; D.webinars.vid=$('v_webinars').value.trim();
+  D.microscope.b=+$('p_microscope').value; D.microscope.vid=$('v_microscope').value.trim();
+  D.cases.b=+$('p_cases').value; D.cases.vid=$('v_cases').value.trim();
+  $('adminSheet').hidden=true;
+  toast('Изменения сохранены!');
+  go();
+};
+
+function paint() {
+  var a=$('navlink');
+  a.textContent=S?'Account':'Sign in';
+  a.href=S?'#account':'#signin';
+  checkAdminAccess();
+}
+
+function go(){
+  var k=location.hash.slice(1),m=/^(webinars|microscope|cases)-(\d+)$/.exec(k),v;
+  if(m&&D[m[1]].l[m[2]])v='les';else v=D[k]?'fmt':(k=='signin'?'auth':'home');
+  VIEWS.forEach(function(id){$(id).hidden=id!=v});
+  if(v=='fmt')fmtView(k);
+  if(v=='les')lesView(m[1],+m[2]);
+  if(v=='auth')authView();
+  window.scrollTo(0,0);
+}
+
+function fmtView(k){
+  var d=D[k];$('ft').textContent=d.t;$('fm').textContent=d.m;
+  $('fl').innerHTML=d.l.map(function(x,i){return '<a class="les" href="#'+k+'-'+i+'"><span class="n">'+(i+1)+'</span><span class="x">'+x[0]+'</span><span class="pr">$10</span></a>'}).join('');
+}
+
+function lesView(k,i){
+  var d=D[k],x=d.l[i];$('lb').href='#'+k;$('lt').textContent=x[0];$('lm').textContent=x[1]+' · '+d.t;
+  $('lpill').textContent='$10';
+  
+  var slot=$('videoSlot');
+  if(d.vid){
+    if(d.vid.includes('<iframe')){
+      slot.innerHTML=d.vid;
+    } else {
+      slot.innerHTML='<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+d.vid+'" frameborder="0" allowfullscreen style="border-radius:14px"></iframe>';
+    }
+  } else {
+    slot.innerHTML='<button class="play glass" id="lplay" aria-label="Play" style="cursor:pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z"/></svg></button>';
+    $('lplay').onclick=function(){toast('Добавьте видео через админ-панель')};
+  }
+
+  $('lb2').onclick=function(){toast('Оплата в процессе интеграции')};
+  $('lb2').textContent='Buy $10';
+  $('lp').innerHTML='<div class="price">$10</div>';
+}
+
+function authView(){
+  var up=mode=='up';$('at').textContent=up?'Create account':'Sign in';
+  $('sb').textContent=up?'Create':'Sign in';
+}
+
+$('tg').onclick=function(){mode=mode=='in'?'up':'in';authView()};
+$('af').onsubmit=async function(ev){
+  ev.preventDefault();
+  var e=$('em').value.trim(),p=$('pw').value;
+  if(sb){
+    var r=mode=='up'?await sb.auth.signUp({email:e,password:p}):await sb.auth.signInWithPassword({email:e,password:p});
+    if(r.error)toast(r.error.message);
+    else{
+      S=r.data.session;
+      paint();
+      toast('Успешный вход!');
+      location.hash='';
+    }
+  }
+};
+
+addEventListener('hashchange',go);
+
+(async function(){
+  if(sb){
+    var s=await sb.auth.getSession();
+    S=s.data.session;
+    sb.auth.onAuthStateChange(function(_e,s){S=s;paint();});
+  }
+  paint();
+  go();
+})();
+</script>
+</body>
+</html>
