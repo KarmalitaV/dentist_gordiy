@@ -1,98 +1,303 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>Dentist Gordiy</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#060508"><meta name="robots" content="noindex">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#050507"><meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;600;700&display=swap">
 <style>
-:root{--bg:#060508;--tx:#F4F2FA;--tx2:rgba(244,242,250,.66);--line:rgba(255,255,255,.1);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--bg:#050507;--tx:#F2F0F7;--tx2:rgba(242,240,247,.62);--line:rgba(255,255,255,.09);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;min-height:100dvh;background:var(--bg);color:var(--tx);font-family:Manrope,system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
-.fx{position:fixed;inset:0;z-index:-1;background:radial-gradient(90% 40% at 100% 0%,rgba(92,74,210,.3),transparent 70%),radial-gradient(70% 35% at 0% 100%,rgba(60,50,160,.22),transparent 70%),radial-gradient(60% 30% at 15% 52%,rgba(108,92,231,.16),transparent 70%),var(--bg)}
+.fx{position:fixed;inset:0;z-index:-1;background:radial-gradient(80% 35% at 100% 0%,rgba(92,74,210,.12),transparent 70%),var(--bg)}
 .fx svg{position:absolute;inset:0;width:100%;height:100%}
 .wrap{max-width:480px;margin:0 auto;padding:0 clamp(16px,6vw,24px)}
 [hidden]{display:none!important}
 a{color:inherit;text-decoration:none}
-.glass{background:radial-gradient(120% 90% at 0% 0%,rgba(255,255,255,.2),transparent 55%),linear-gradient(135deg,rgba(255,255,255,.1),rgba(120,100,255,.12));-webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 1px rgba(255,255,255,.6),inset 0 -1px 1px rgba(255,255,255,.1),inset 0 0 24px rgba(255,255,255,.04),0 20px 40px -16px rgba(0,0,0,.85)}
-@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.glass{background:rgba(32,27,66,.92)}}
+.glass{background:rgba(18,16,26,.62);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.16);box-shadow:0 12px 30px -12px rgba(0,0,0,.8)}
 .top{display:flex;justify-content:space-between;align-items:center;padding-top:16px}
-.dg{font-family:'Instrument Serif',serif;font-style:italic;font-size:28px}
+.dg{font:800 20px Syne,sans-serif;letter-spacing:.02em}
 .eyebrow{font-size:12px;letter-spacing:.26em;color:var(--tx2);text-transform:uppercase}
-.ln{display:flex;align-items:center;gap:12px;margin-top:clamp(36px,9dvh,72px)}.ln i{width:28px;height:1px;background:rgba(255,255,255,.4)}
-h1{margin:22px 0 0}
-.d{display:block;font-size:14px;font-weight:500;letter-spacing:.46em;text-transform:uppercase;padding-left:4px}
-.g{display:block;font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(76px,28vw,112px);line-height:.95;letter-spacing:-.02em;padding-bottom:10px;background:linear-gradient(180deg,#fff 0%,#d8d3ff 52%,#8f84f2 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 8px 26px rgba(108,92,231,.55))}
-.sub{margin:12px 0 0;font-size:14px;line-height:1.55;color:var(--tx2);max-width:260px}
-.stack{display:flex;flex-direction:column;margin-top:clamp(28px,6dvh,48px)}
-.card{position:relative;display:block;min-height:150px;margin-top:-30px;padding:22px;border-radius:28px;overflow:hidden;isolation:isolate;background:linear-gradient(160deg,rgba(255,255,255,.075) 0%,rgba(255,255,255,.015) 38%,rgba(18,14,42,.5) 100%),rgba(12,10,26,.5);-webkit-backdrop-filter:blur(28px) saturate(160%);backdrop-filter:blur(28px) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 34px 60px -24px rgba(0,0,0,.95),0 8px 20px -10px rgba(0,0,0,.6);animation:rise .6s cubic-bezier(.22,1,.36,1) both;transition:transform .25s cubic-bezier(.22,1,.36,1)}
-.card:first-child{margin-top:0}.card:nth-child(1){z-index:1;margin-inline:14px}.card:nth-child(2){z-index:2;margin-inline:7px;animation-delay:.07s}.card:nth-child(3){z-index:3;animation-delay:.14s}
-.card:active{transform:scale(.985)}
-.card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(160deg,rgba(255,255,255,.55),rgba(255,255,255,.07) 28%,rgba(255,255,255,.03) 68%,rgba(160,140,255,.35));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;pointer-events:none}.card::after{content:"";position:absolute;left:-20%;top:-60%;width:90%;height:100%;background:radial-gradient(closest-side,rgba(255,255,255,.12),transparent);pointer-events:none}.rings{position:absolute;right:-46px;bottom:-60px;width:190px;height:190px;color:rgba(255,255,255,.1);pointer-events:none}@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.card{background:rgba(20,16,46,.95)}}
-.card h2{position:relative;margin:0;font-weight:600;font-size:clamp(19px,5.6vw,22px);line-height:1.18;letter-spacing:-.02em;color:#fff}
-.meta{position:relative;margin-top:6px;font-size:12px;color:var(--tx2);font-variant-numeric:tabular-nums}
-.foot{padding:28px 0 32px;font-size:12px;color:var(--tx2);letter-spacing:.04em}
+.nav{min-height:44px;display:flex;align-items:center;font-size:13px;letter-spacing:.04em;color:var(--tx2)}
+.ln{display:flex;align-items:center;gap:12px;margin-top:clamp(12px,3dvh,28px)}.ln i{width:28px;height:1px;background:rgba(255,255,255,.4)}
+h1{margin:24px 0 0}
+.d{display:block;font-size:12px;font-weight:600;letter-spacing:.5em;text-transform:uppercase;color:var(--tx2);padding-left:3px}
+.g{display:block;margin-top:10px;font-family:Syne,sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(40px,14.5vw,64px);line-height:.95;letter-spacing:-.035em;color:var(--tx)}
+.sub{margin:18px 0 0;font-size:14px;line-height:1.55;color:var(--tx2);max-width:270px}
+.cta2{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:8px;font-size:14px;font-weight:600;color:var(--tx);border-bottom:1px solid rgba(255,255,255,.35)}
+.stack{display:flex;flex-direction:column;gap:12px;margin-top:clamp(32px,6dvh,52px)}
+.cw{animation:rise .7s cubic-bezier(.22,1,.36,1) both}.cw:nth-child(2){animation-delay:.08s}.cw:nth-child(3){animation-delay:.16s}
+.card{position:relative;display:block;min-height:118px;padding:22px;border-radius:18px;background:linear-gradient(180deg,#110f17,#0a090e);border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.05);transition:transform .25s cubic-bezier(.22,1,.36,1),border-color .25s}
+.card::before{content:"";position:absolute;left:22px;top:-1px;width:32px;height:1px;background:var(--tx);opacity:.7}
+.card:active{transform:scale(.985);border-color:rgba(255,255,255,.22)}
+.card h2{margin:0;font-weight:600;font-size:clamp(19px,5.6vw,22px);line-height:1.18;letter-spacing:-.02em;color:#fff}
+.desc{margin:8px 0 0;font-size:13px;line-height:1.45;color:var(--tx2);max-width:92%}
+.meta{margin-top:10px;font-size:12px;color:var(--tx2);font-variant-numeric:tabular-nums}
+.trust{display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:26px}.trust span{padding:8px 12px;border-radius:10px;border:1px solid var(--line);font-size:12px;color:var(--tx2)}
+.sec{margin-top:52px}
+.inc{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.inc div{padding:16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.02);font-size:13px;line-height:1.35}.inc svg{display:block;margin-bottom:12px;color:var(--tx2)}
+.steps{margin:10px 0 0;padding:0;list-style:none}.steps li{display:flex;align-items:center;gap:14px;padding:16px 0;border-top:1px solid var(--line);font-size:14px}.steps li:last-child{border-bottom:1px solid var(--line)}.steps i{width:6px;height:6px;background:var(--tx);opacity:.7}
+.about{display:flex;gap:16px;align-items:center;margin-top:14px;padding:18px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.av{flex:none;width:56px;height:56px;border-radius:14px;display:grid;place-items:center;font:800 24px Syne,sans-serif;border:1px solid rgba(255,255,255,.16);background:#121019}
+.about b{display:block;font-size:15px;margin-bottom:4px}.about span{font-size:13px;line-height:1.45;color:var(--tx2)}
+.foot{margin-top:44px;padding:22px 0 36px;border-top:1px solid var(--line);font-size:12px;color:var(--tx2);display:flex;flex-wrap:wrap;gap:6px 18px}
 @keyframes rise{from{opacity:0;transform:translateY(12px)}}
-.back{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center}
-.player{position:relative;aspect-ratio:16/9;margin-top:14px;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:radial-gradient(circle at 70% 50%,rgba(110,92,235,.4),transparent 55%),repeating-radial-gradient(circle at 70% 50%,transparent 0 22px,rgba(255,255,255,.06) 22px 23px),#0a0912}
-.play{position:absolute;left:50%;top:50%;width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:50%;display:grid;place-items:center;color:#fff;border-radius:50%}
-.pill{position:absolute;left:14px;top:14px;padding:4px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.2);font-size:12px}
+.back{width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.16);display:grid;place-items:center}
+.player{position:relative;aspect-ratio:16/9;margin-top:14px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:radial-gradient(circle at 70% 50%,rgba(110,92,235,.14),transparent 55%),repeating-radial-gradient(circle at 70% 50%,transparent 0 22px,rgba(255,255,255,.05) 22px 23px),#09080d}
+.play{position:absolute;left:50%;top:50%;width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:50%;display:grid;place-items:center;color:#fff}
+.pill{position:absolute;left:14px;top:14px;padding:4px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.2);font-size:12px}
 .prog{position:absolute;left:16px;right:16px;bottom:14px;font-size:12px;text-align:right;font-variant-numeric:tabular-nums}.prog div{height:2px;margin-top:8px;background:rgba(255,255,255,.2)}.prog b{display:block;width:26%;height:2px;background:#fff}
 h3{margin:22px 0 0;font-weight:600;font-size:clamp(24px,7.4vw,30px);line-height:1.12;letter-spacing:-.025em}
-.lh{margin:22px 0 6px}
+.lh{margin:26px 0 6px}
 .les{display:flex;align-items:center;gap:14px;min-height:56px;border-top:1px solid var(--line);font-size:14px;line-height:1.3}
 .les:last-child{border-bottom:1px solid var(--line)}
 .les .n,.les .t{font-size:12px;color:var(--tx2);font-variant-numeric:tabular-nums}.les .n{width:18px}.les span.x{flex:1}
 .les.lock{opacity:.6}.les svg{color:var(--tx2);flex:none}
-.eq{display:inline-flex;align-items:flex-end;gap:2px;height:12px;margin-left:10px}.eq i{width:2px;background:#B7AEFF;animation:eq 1s ease-in-out infinite}.eq i:nth-child(1){height:12px}.eq i:nth-child(2){height:6px;animation-delay:.2s}.eq i:nth-child(3){height:9px;animation-delay:.4s}
+.eq{display:inline-flex;align-items:flex-end;gap:2px;height:12px;margin-left:10px}.eq i{width:2px;background:var(--tx);animation:eq 1s ease-in-out infinite}.eq i:nth-child(1){height:12px}.eq i:nth-child(2){height:6px;animation-delay:.2s}.eq i:nth-child(3){height:9px;animation-delay:.4s}
 @keyframes eq{50%{transform:scaleY(.4)}}
-.free{margin-left:10px;font-size:12px;font-weight:500;color:#B7AEFF}
-.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(6,5,8,.88);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);border-top:1px solid rgba(255,255,255,.1);padding:14px 0 calc(14px + env(safe-area-inset-bottom,0px))}
+.free{margin-left:10px;font-size:12px;font-weight:600;color:var(--tx)}
+.learn{list-style:none;margin:6px 0 0;padding:0}.learn li{display:flex;gap:12px;padding:12px 0;font-size:14px;line-height:1.4}.learn svg{flex:none;margin-top:2px;color:var(--tx2)}
+.guar{display:flex;gap:14px;align-items:center;margin-top:26px;padding:16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.02);font-size:13px;line-height:1.45}.guar svg{flex:none;color:var(--tx2)}
+.lead{margin-top:30px}.lead .row{display:flex;gap:10px}.lead .in{flex:1;min-width:0}.lead .buy{min-height:54px;padding:0 18px;border-radius:12px}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(5,5,7,.92);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border-top:1px solid var(--line);padding:14px 0 calc(14px + env(safe-area-inset-bottom,0px))}
 .bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .price{font-weight:600;font-size:28px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}.price s{font-size:13px;font-weight:400;color:var(--tx2);margin-left:8px}
 .cap{font-size:12px;color:var(--tx2)}
-.buy{min-height:48px;padding:0 clamp(20px,7vw,28px);border:0;border-radius:24px;font:600 15px Manrope,sans-serif;color:#0b0b12;cursor:pointer;background:linear-gradient(145deg,#f7f7fb,#9d9daa 52%,#e6e6ee);box-shadow:inset 0 1px 0 #fff,inset 0 -2px 5px rgba(0,0,0,.28),0 0 0 1px rgba(255,255,255,.22),0 12px 24px -8px rgba(0,0,0,.9),0 0 30px rgba(120,100,255,.28)}
+.buy{min-height:52px;padding:0 clamp(20px,7vw,28px);border:0;border-radius:14px;font:700 14px Manrope,sans-serif;letter-spacing:.02em;color:#08070b;cursor:pointer;background:var(--tx);box-shadow:0 10px 24px -12px rgba(0,0,0,.9)}
 .buy:active{transform:scale(.97)}.buy:disabled{opacity:.6;cursor:default}
-:focus-visible{outline:2px solid #B7AEFF;outline-offset:3px}
-.toast{position:fixed;left:50%;bottom:calc(120px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);padding:10px 16px;border-radius:16px;font-size:13px;white-space:nowrap}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.form{margin-top:28px;display:flex;flex-direction:column;gap:20px}
+label{display:block;margin-bottom:8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tx2)}
+.in{width:100%;min-height:54px;padding:0 16px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:#0c0b11;color:var(--tx);font:400 16px Manrope,sans-serif;outline:none}
+.in:focus{border-color:var(--tx)}
+.pw{position:relative}.pw .in{padding-right:72px}.pw button{position:absolute;right:4px;top:5px;min-height:44px;padding:0 12px;border:0;background:none;color:var(--tx2);font:500 13px Manrope,sans-serif;cursor:pointer}
+.err{min-height:18px;margin-top:6px;font-size:13px;color:#ff9fb0}
+.note{font-size:13px;line-height:1.5;color:var(--tx2)}
+.link{min-height:44px;border:0;background:none;color:var(--tx);font:500 14px Manrope,sans-serif;cursor:pointer;text-align:left;padding:0;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(255,255,255,.3)}
+.ac{margin-top:26px;padding:20px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+:focus-visible{outline:2px solid var(--tx);outline-offset:3px}
+.toast{position:fixed;left:50%;bottom:calc(120px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);padding:10px 16px;border-radius:12px;font-size:13px;white-space:nowrap;z-index:9}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+.chip{padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:none;color:var(--tx2);font:400 12px Manrope,sans-serif;cursor:pointer;min-height:36px}
+.tile{display:block;padding:16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.02);font-size:13px;line-height:1.4}.tile svg{display:block;margin-bottom:12px;color:var(--tx2)}.tile b{display:block;font-size:14px;margin-bottom:4px}.tile span{color:var(--tx2)}
+.steps li{padding:0}.steps a{display:flex;align-items:center;gap:14px;width:100%;min-height:56px}
+a.about{color:inherit}
+.sheet{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.6);display:flex;align-items:flex-end}
+.sc{width:100%;max-width:480px;margin:0 auto;max-height:82dvh;overflow:auto;padding:12px 24px calc(24px + env(safe-area-inset-bottom,0px));border-radius:20px 20px 0 0;background:#0c0b11;border:1px solid var(--line);animation:up .3s cubic-bezier(.22,1,.36,1)}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+.sc .hd{width:36px;height:4px;border-radius:2px;background:rgba(255,255,255,.2);margin:0 auto 18px}
+.sc h4{margin:0 0 10px;font-size:20px;letter-spacing:-.02em}.sc p{margin:0 0 16px;font-size:14px;line-height:1.55;color:var(--tx2)}
+.ghost{background:none;color:var(--tx);border:1px solid rgba(255,255,255,.2);box-shadow:none}
+.ctr{display:flex;align-items:center;justify-content:center;width:100%;text-decoration:none}
+.soc{display:flex;flex-direction:column;gap:10px;margin-top:28px}
+.soc .buy{display:flex;align-items:center;justify-content:center;gap:12px}.soc svg{flex:none}
+.or{display:flex;align-items:center;gap:12px;margin-top:24px;font-size:12px;letter-spacing:.2em;color:var(--tx2)}.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+.pm{display:flex;flex-direction:column;gap:10px;margin-top:10px}.pm button{display:flex;align-items:center;gap:14px;min-height:62px;padding:0 16px;border-radius:14px;border:1px solid var(--line);background:#0c0b11;color:var(--tx);font:600 15px Manrope,sans-serif;cursor:pointer;text-align:left}.pm button[aria-checked=true]{border-color:var(--tx)}.pm i{width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(255,255,255,.4);flex:none}.pm [aria-checked=true] i{border:5px solid var(--tx)}.pm small{display:block;font-size:12px;font-weight:400;color:var(--tx2);margin-top:2px}
+.sum{margin-top:26px;padding:18px;border-radius:14px;border:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.pr{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+button.les{width:100%;background:none;border:0;border-top:1px solid var(--line);color:inherit;font:inherit;font-size:14px;text-align:left;cursor:pointer;padding:0}
+a.les{color:inherit}
+.chat{display:flex;flex-direction:column;gap:10px;margin:18px 0;min-height:36dvh}
+.m{max-width:82%;padding:10px 14px;border-radius:14px;font-size:14px;line-height:1.45;background:#15131c;align-self:flex-start}.m.me{align-self:flex-end;background:var(--tx);color:#08070b}.m small{display:block;font-size:11px;opacity:.6;margin-bottom:3px}
+.cin{position:sticky;bottom:0;display:flex;gap:10px;padding:12px 0 calc(12px + env(safe-area-inset-bottom,0px));background:var(--bg)}.cin .in{flex:1;min-width:0}.cin .buy{min-height:54px;padding:0 20px;border-radius:12px}
+.tabs{display:flex;gap:8px;margin-top:20px}.tabs button{flex:1;min-height:44px;border-radius:12px;border:1px solid var(--line);background:none;color:var(--tx2);font:600 14px Manrope,sans-serif;cursor:pointer}.tabs button[aria-selected=true]{color:var(--tx);border-color:var(--tx)}
 </style></head><body>
 <div class="fx" aria-hidden="true"><svg viewBox="0 0 390 844" preserveAspectRatio="none" fill="none"><g stroke="rgba(255,255,255,.04)"><path d="M-20 120C90 90 180 190 280 220S400 170 430 130"/><path d="M-20 380C80 350 190 440 290 470S390 430 430 400"/><path d="M-20 660C100 620 200 730 300 760S400 720 430 690"/></g></svg></div>
 <main id="home" class="wrap">
-<div class="top"><span class="dg">DG</span><a href="#" class="eyebrow" style="letter-spacing:.04em;text-transform:none;font-size:13px;min-height:44px;display:flex;align-items:center">Sign in</a></div>
+<div class="top"><span class="dg">DG</span><a href="#signin" id="navlink" class="nav">Sign in</a></div>
 <div class="ln"><i></i><span class="eyebrow">Courses</span></div>
 <h1><span class="d">Dentist</span><span class="g">Gordiy</span></h1>
-<p class="sub">Clinical education for dentists, filmed under the microscope.</p>
-<nav class="stack" aria-label="Format">
-<a class="card" href="#webinars"><svg class="rings" viewBox="0 0 200 200" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="100" cy="100" r="30"/><circle cx="100" cy="100" r="52"/><circle cx="100" cy="100" r="74"/><circle cx="100" cy="100" r="96"/></svg><h2>Webinars</h2><div class="meta">8 lessons · 9h</div></a>
-<a class="card" href="#microscope"><svg class="rings" viewBox="0 0 200 200" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="100" cy="100" r="30"/><circle cx="100" cy="100" r="52"/><circle cx="100" cy="100" r="74"/><circle cx="100" cy="100" r="96"/></svg><h2>Practical videos from microscope</h2><div class="meta">14 lessons · 6h 20m</div></a>
-<a class="card" href="#cases"><svg class="rings" viewBox="0 0 200 200" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="100" cy="100" r="30"/><circle cx="100" cy="100" r="52"/><circle cx="100" cy="100" r="74"/><circle cx="100" cy="100" r="96"/></svg><h2>Presentation of cases</h2><div class="meta">10 lessons · 4h 40m</div></a>
+<p class="sub">Clinical education for dentists, filmed under the microscope.</p><a class="cta2" href="#microscope-0">Watch a free lesson <span aria-hidden="true">→</span></a>
+<nav class="stack" id="formats" aria-label="Format">
+<div class="cw"><a class="card" href="#webinars"><h2>Webinars</h2><p class="desc">Live clinical sessions, recorded so you can watch any time.</p><div class="meta">8 lessons · 9h</div></a></div>
+<div class="cw"><a class="card" href="#microscope"><h2>Practical videos from microscope</h2><p class="desc">Every step of the procedure, filmed at high magnification.</p><div class="meta">14 lessons · 6h 20m</div></a></div>
+<div class="cw"><a class="card" href="#cases"><h2>Presentation of cases</h2><p class="desc">Real treatment plans, from diagnosis to follow-up.</p><div class="meta">10 lessons · 4h 40m</div></a></div>
 </nav>
-<div class="foot">Lifetime access · Certificate · 30-day refund</div>
+<div class="trust"><button class="chip" data-i="preview">Free preview in every format</button><button class="chip" data-i="refund">30-day refund</button><button class="chip" data-i="life">Lifetime access</button></div>
+<section class="sec"><div class="eyebrow">Your instructor</div><a class="about" href="#doctor"><span class="av">G</span><div><b>Dr. Gordiy</b><span>Practising dentist. Every course is filmed during real clinical work.</span><span id="cred" style="display:block;margin-top:6px;color:var(--tx)"></span></div></a></section>
+<section class="sec"><div class="eyebrow">Support and materials</div><div class="inc"><a class="tile" href="#materials"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><b>PDF materials</b><span>Checklists and templates for every format</span></a><a class="tile" href="#support"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 20l1-4.5A8 8 0 1 1 21 12z"/></svg><b>Direct support</b><span>Ask Dr. Gordiy or join the community</span></a></div></section>
+<section class="sec"><div class="eyebrow">How it works</div><ul class="steps"><li><a href="#formats"><i></i>Choose a format and watch the free preview</a></li><li><a href="#signin" id="st2"><i></i>Create an account and buy a lesson or a full format</a></li><li><a href="#account"><i></i>Watch on any device and resume where you stopped</a></li></ul></section>
+<div class="foot"><a href="#" data-i="terms">Terms</a><a href="#" data-i="privacy">Privacy</a><a href="#" data-i="refund">Refund policy</a><span>© Dentist Gordiy</span></div>
 </main>
-<main id="fmt" class="wrap" style="padding-bottom:140px" hidden>
-<div class="top" style="justify-content:flex-start;gap:14px"><a class="back" href="#" aria-label="Back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a><span class="eyebrow" id="fn"></span></div>
-<div class="player"><span class="pill">Free preview</span><button class="play glass" aria-label="Play preview" style="cursor:pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z"/></svg></button><div class="prog">02:14 / 08:40<div><b></b></div></div></div>
+<main id="fmt" class="wrap" style="padding-bottom:60px" hidden>
+<div class="top" style="justify-content:flex-start;gap:14px"><a class="back" href="#" aria-label="Back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a><span class="eyebrow">Format</span></div>
+<div class="player"><span class="pill">Free preview</span><a class="play glass" id="pp" href="#" aria-label="Play free preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z"/></svg></a><div class="prog">02:14 / 08:40<div><b></b></div></div></div>
 <h3 id="ft"></h3><div class="meta" id="fm" style="letter-spacing:.04em"></div>
-<div class="eyebrow lh">Module 1</div><div id="fl"></div>
-<div class="bar"><div class="wrap"><div><div class="price">$149<s>$199</s></div><div class="cap">One-time · lifetime access</div></div><button class="buy" id="buy">Buy course</button></div></div>
+<div class="eyebrow lh">What you’ll learn</div><ul class="learn" id="lw"></ul>
+<div class="eyebrow lh">Lessons</div><div id="fl"></div>
+<button class="guar" data-i="refund" style="width:100%;color:inherit;font-family:inherit;text-align:left;cursor:pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><span>30-day refund. Lifetime access. Tap for details.</span></button>
+<form class="lead" id="lf" novalidate><div class="eyebrow" style="margin-bottom:8px">Not today?</div><p class="note" style="margin:0 0 12px">Leave your email and we’ll send you the link to this course.</p><div class="row"><input class="in" id="le" type="email" inputmode="email" autocomplete="email" placeholder="Your email" aria-label="Email"><button class="buy" type="submit">Send link</button></div><div class="err" id="lr" role="alert"></div></form>
+
 </main>
+<main id="les" class="wrap" style="padding-bottom:150px" hidden>
+<div class="top" style="justify-content:flex-start;gap:14px"><a class="back" id="lb" href="#" aria-label="Back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a><span class="eyebrow">Lesson</span></div>
+<div class="player"><span class="pill" id="lpill"></span><button class="play glass" id="lplay" aria-label="Play" style="cursor:pointer"></button></div>
+<h3 id="lt"></h3><div class="meta" id="lm" style="letter-spacing:.04em"></div>
+<p class="note" id="ld" style="margin:16px 0 0">Watch the full procedure and the reasoning behind each step, filmed during real clinical work.</p>
+<button class="link" id="lall" style="margin-top:14px"></button>
+<div class="bar"><div class="wrap"><div id="lp"></div><button class="buy" id="lb2"></button></div></div>
+</main>
+<main id="auth" class="wrap" hidden>
+<div class="top" style="justify-content:flex-start;gap:14px"><a class="back" href="#" aria-label="Back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a><span class="eyebrow">Account</span></div>
+<h3 id="at" style="margin-top:36px"></h3><p class="note" id="an" style="margin:10px 0 0"></p>
+<div class="soc"><button class="buy ghost" data-p="google"><svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Continue with Google</button><button class="buy ghost" data-p="apple"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>Continue with Apple</button><button class="buy ghost" data-p="twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>Continue with X</button></div>
+<p class="note" id="ig" style="margin:14px 0 0" hidden>You are in the Instagram browser: Google may block sign-in here. Open this page in Safari or Chrome, or use your email below.</p>
+<div class="or">OR</div>
+<form class="form" id="af" novalidate style="margin-top:22px">
+<div><label for="em">Email</label><input class="in" id="em" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false"><div class="err" id="ee" role="alert"></div></div>
+<div><label for="pw">Password</label><div class="pw"><input class="in" id="pw" type="password" autocomplete="current-password"><button type="button" id="sh">Show</button></div><div class="err" id="pe" role="alert"></div></div>
+<div class="err" id="fe" role="alert" style="margin:-8px 0"></div>
+<button class="buy" id="sb" type="submit" style="width:100%">Sign in</button>
+<button class="link" id="tg" type="button"></button><button class="link" id="fp" type="button">Forgot password?</button>
+</form></main>
+<main id="acct" class="wrap" hidden>
+<div class="top" style="justify-content:flex-start;gap:14px"><a class="back" href="#" aria-label="Back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a><span class="eyebrow">Account</span></div>
+<h3 style="margin-top:36px">My courses</h3><div class="note" id="ae" style="margin-top:8px"></div>
+<div class="ac" id="al"></div>
+<button class="buy ghost" id="so" style="margin-top:28px">Sign out</button>
+</main>
+<main id="pay" class="wrap" hidden>
+<div class="top" style="justify-content:flex-start;gap:14px"><a class="back" id="pk" href="#" aria-label="Back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a><span class="eyebrow">Checkout</span></div>
+<h3 style="margin-top:36px">Payment</h3>
+<div class="sum"><div><div class="cap">Order</div><b id="pt" style="font-size:15px"></b></div><div class="price" id="pa" style="font-size:24px"></div></div>
+<div class="eyebrow lh">Payment method</div>
+<div class="pm" role="radiogroup" id="pm" aria-label="Payment method">
+<button role="radio" aria-checked="false" data-m="apple"><i></i><span>Apple Pay<small>iPhone, iPad and Mac</small></span></button>
+<button role="radio" aria-checked="false" data-m="google"><i></i><span>Google Pay<small>Android and Chrome</small></span></button>
+<button role="radio" aria-checked="false" data-m="paypal"><i></i><span>PayPal<small>Pay from your PayPal balance or card</small></span></button>
+<button role="radio" aria-checked="true" data-m="card"><i></i><span>Card · Stripe<small>Visa, Mastercard</small></span></button>
+<button role="radio" aria-checked="false" data-m="crypto"><i></i><span>Crypto<small>USDT, BTC, ETH</small></span></button>
+</div>
+<p class="note" style="margin:14px 0 0">Apple Pay and Google Pay depend on your device and browser. Inside the Instagram app, open this page in your browser for the best result.</p>
+<button class="buy" id="pb" style="width:100%;margin-top:22px"></button>
+<p class="note" style="text-align:center;margin:14px 0 36px">Secure payment · 30-day refund</p>
+</main>
+<main id="sup" class="wrap" hidden>
+<div class="top" style="justify-content:flex-start;gap:14px"><a class="back" href="#" aria-label="Back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a><span class="eyebrow">Direct support</span></div>
+<div class="tabs" id="tb" role="tablist"><button role="tab" data-r="doctor">Dr. Gordiy</button><button role="tab" data-r="community">Community</button></div>
+<p class="note" id="sn" style="margin:14px 0 0"></p>
+<div class="ac" id="cl" hidden><b>Community is for students</b><p class="note" style="margin:8px 0 16px">Buy any lesson or a full format to join the conversation with other dentists.</p><a class="buy ctr" href="#">Choose a format</a></div>
+<div class="chat" id="cm"></div>
+<form class="cin" id="cf" novalidate><input class="in" id="ci" type="text" autocomplete="off" placeholder="Write a message" aria-label="Message"><button class="buy" type="submit">Send</button></form>
+</main>
+<main id="mat" class="wrap" hidden>
+<div class="top" style="justify-content:flex-start;gap:14px"><a class="back" href="#" aria-label="Back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a><span class="eyebrow">Materials</span></div>
+<h3 style="margin-top:36px">PDF materials</h3><p class="note" style="margin:8px 0 18px">Checklists and templates are unlocked when you buy any lesson or the full set in that format.</p>
+<div id="ml"></div>
+</main>
+<main id="doc" class="wrap" hidden>
+<div class="top" style="justify-content:flex-start;gap:14px"><a class="back" href="#" aria-label="Back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a><span class="eyebrow">Instructor</span></div>
+<div class="about" style="margin-top:28px"><span class="av">G</span><div><b>Dr. Gordiy</b><span>Practising dentist</span></div></div>
+<p class="note" style="margin:20px 0">Every course is filmed during real clinical work, under the microscope. No slides without practice: you see the procedure and the reasoning behind each step.</p>
+<p class="note" id="cred2" style="color:var(--tx)"></p>
+<a class="buy ctr" href="#support" style="margin-top:20px">Ask a question</a>
+<a class="buy ghost ctr" href="#microscope-0" style="margin-top:10px">Watch a free lesson</a>
+</main>
+<div class="sheet" id="shd" hidden><div class="sc" id="shc" role="dialog" aria-modal="true"></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script>
-var P='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l13 8-13 8z"/></svg>',L='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
-var D={webinars:{n:'01',t:'Webinars',m:'8 lessons · 9h',l:[['Digital workflow in daily practice','58:10'],['Case planning with the team','1:12:30'],['Q&A: difficult endodontic cases','1:05:00'],['Restorative trends review','49:20']]},
-microscope:{n:'02',t:'Practical videos from microscope',m:'14 lessons · 6h 20m · Certificate',l:[['Working position and ergonomics','08:40'],['Setting up the microscope','11:05'],['Locating the MB2 canal','19:30'],['Access cavity under magnification','16:12']]},
-cases:{n:'03',t:'Presentation of cases',m:'10 lessons · 4h 40m',l:[['Case 1: retreatment of a molar','24:10'],['Case 2: post and core restoration','31:45'],['Case 3: anterior composite','27:00'],['Case 4: follow-up at 12 months','18:30']]}};
-function go(){var k=location.hash.slice(1),d=D[k];document.getElementById('home').hidden=!!d;document.getElementById('fmt').hidden=!d;
-if(d){document.getElementById('fn').textContent='Format';document.getElementById('ft').textContent=d.t;document.getElementById('fm').textContent=d.m;
-document.getElementById('fl').innerHTML=d.l.map(function(x,i){var c=i>1?' lock':'',ic=i>1?L:P,ex=i==0?'<span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>':i==1?'<span class="free">Free</span>':'';
-return '<div class="les'+c+'"><span class="n">'+(i+1)+'</span><span class="x"'+(i==0?' style="color:#fff"':'')+'>'+x[0]+ex+'</span><span class="t">'+x[1]+'</span>'+ic+'</div>'}).join('')}
-window.scrollTo(0,0)}
-addEventListener('hashchange',go);go();
-var CHECKOUT_URL='';/* paste your backend endpoint here (see wayforpay-create-invoice.ts) */
-function toast(s){var t=document.createElement('div');t.className='toast glass';t.textContent=s;document.body.appendChild(t);setTimeout(function(){t.remove()},2200)}
-document.getElementById('buy').onclick=function(){var b=this,old=b.textContent;
-function reset(){b.disabled=false;b.textContent=old}
-if(!CHECKOUT_URL){toast('Demo: payment is not connected yet');return}
-b.disabled=true;b.textContent='Redirecting…';
-fetch(CHECKOUT_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({format:location.hash.slice(1)})})
-.then(function(r){return r.json()}).then(function(j){if(!j.invoiceUrl)throw 0;location.href=j.invoiceUrl})
-.catch(function(){toast('Could not start payment. Try again.');reset()})};
+/* ---- CONFIG: fill in to go live (anon key is public by design; protect data with RLS) ---- */
+var SUPABASE_URL='',SUPABASE_ANON_KEY='',CHECKOUT_URL='';
+var TRUST={credentials:''};/* e.g. 'Endodontist · 12 years in practice' — shown only when filled in */
+var sb=(SUPABASE_URL&&window.supabase)?supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY,{auth:{flowType:'pkce'}}):null;
+var S=null,owned={},mode='in',room='doctor',poll=null,pm='card',$=function(i){return document.getElementById(i)};
+var VIEWS=['home','fmt','les','auth','acct','pay','sup','mat','doc'];
+function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,v)}catch(e){}return null}
+function ss(k,v){try{if(v===undefined)return sessionStorage.getItem(k);if(v===null)sessionStorage.removeItem(k);else sessionStorage.setItem(k,v)}catch(e){}return null}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+if(TRUST.credentials){$('cred').textContent=TRUST.credentials;$('cred2').textContent=TRUST.credentials}
+var SV=function(p,n){return '<svg width="'+n+'" height="'+n+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'+p+'</svg>'};
+var PLAY=SV('<path d="M8 5l12 7-12 7z" fill="currentColor"/>',22),LOCK=SV('<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',22),CK=SV('<path d="M5 12l5 5 9-10"/>',18),PDF=SV('<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/>',20);
+/* Illustrative content and prices: replace with real ones. Price 0 = free preview lesson. */
+var D={webinars:{t:'Webinars',m:'8 lessons · 9h',b:39,w:['Plan complex cases step by step with a clear decision logic','Apply a digital workflow in your clinic from the next patient','Get answers to real questions from practising dentists'],l:[['Digital workflow in daily practice','58:10',0],['Case planning with the team','1:12:30',19],['Q&A: difficult endodontic cases','1:05:00',19],['Restorative trends review','49:20',15]]},
+microscope:{t:'Practical videos from microscope',m:'14 lessons · 6h 20m',b:55,w:['Work in a comfortable, ergonomic position under magnification','Find and treat difficult canals, including MB2','Build a repeatable routine for access cavities'],l:[['Working position and ergonomics','08:40',0],['Setting up the microscope','11:05',19],['Locating the MB2 canal','19:30',29],['Access cavity under magnification','16:12',25]]},
+cases:{t:'Presentation of cases',m:'10 lessons · 4h 40m',b:45,w:['See complete treatment plans from diagnosis to follow-up','Understand why each decision was made, not only what was done','Reuse the protocols in your own practice'],l:[['Case 1: retreatment of a molar','24:10',0],['Case 2: post and core restoration','31:45',24],['Case 3: anterior composite','27:00',24],['Case 4: follow-up at 12 months','18:30',19]]}};
+var MAT={webinars:'Digital workflow checklist',microscope:'Magnification setup checklist',cases:'Case documentation template'};
+var INFO={preview:['Free preview','<p>The first lesson of every format is free. Watch how the work is filmed and explained before you decide to buy.</p><a class="buy ctr" href="#microscope-0">Watch a free lesson</a>'],
+refund:['30-day refund','<p>If a lesson or course is not what you expected, write to support within 30 days of purchase and it will be refunded. Replace this text with your official policy.</p>'],
+life:['Lifetime access','<p>Everything you buy stays in your account. Watch on any device and resume where you stopped.</p>'],
+terms:['Terms of service','<p>Add your terms of service here.</p>'],privacy:['Privacy policy','<p>Add your privacy policy here.</p>']};
+var sum=function(d){return d.l.reduce(function(a,x){return a+x[2]},0)};
+var has=function(k,i){return D[k].l[i][2]==0||!!owned[k]||!!owned[k+'-'+i]};
+function toast(s){var t=document.createElement('div');t.className='toast glass';t.textContent=s;document.body.appendChild(t);setTimeout(function(){t.remove()},2400)}
+function sheet(t,h){$('shc').innerHTML='<div class="hd"></div><h4>'+t+'</h4>'+h+'<button class="buy ghost ctr" id="sx" style="margin-top:6px">Close</button>';$('shd').hidden=false;$('sx').onclick=shut;$('sx').focus()}
+function shut(){$('shd').hidden=true}
+$('shd').onclick=function(e){if(e.target==this)shut()};
+document.addEventListener('click',function(e){var t=e.target.closest('[data-i]');if(t){e.preventDefault();var o=INFO[t.dataset.i];sheet(o[0],o[1])}});
+function mail(){return S&&S.user?S.user.email:''}
+function paint(){var a=$('navlink');a.textContent=S?'Account':'Sign in';a.href=S?'#account':'#signin';$('st2').href=S?'#account':'#signin'}
+async function loadPurchases(){owned={};if(sb&&S){try{var r=await sb.from('purchases').select('item').eq('status','paid');(r.data||[]).forEach(function(x){owned[x.item]=1})}catch(e){}}}
+function stopPoll(){if(poll){clearInterval(poll);poll=null}}
+function go(){var k=location.hash.slice(1),m=/^(webinars|microscope|cases)-(\d+)$/.exec(k),v;shut();stopPoll();
+if(m&&D[m[1]].l[m[2]])v='les';else v=D[k]?'fmt':({signin:'auth',account:'acct',pay:'pay',support:'sup',materials:'mat',doctor:'doc'})[k]||'home';
+VIEWS.forEach(function(id){$(id).hidden=id!=v});
+if(v=='fmt')fmtView(k);if(v=='les')lesView(m[1],+m[2]);if(v=='auth')authView();if(v=='acct')acctView();if(v=='pay')payView();if(v=='sup')supView();if(v=='mat')matView();
+if(k=='formats')$('formats').scrollIntoView();else window.scrollTo(0,0)}
+function buy(c){ss('dg_cart',JSON.stringify(c));if(!S){ss('dg_ret','pay');mode='in';location.hash='signin';return}location.hash='pay'}
+function fmtView(k){var d=D[k],s=sum(d),o=!!owned[k];$('ft').textContent=d.t;$('fm').textContent=d.m;$('pp').href='#'+k+'-0';
+$('lw').innerHTML=d.w.map(function(x){return '<li>'+CK+'<span>'+x+'</span></li>'}).join('');
+$('fl').innerHTML=d.l.map(function(x,i){return '<a class="les'+(has(k,i)?'':' lock')+'" href="#'+k+'-'+i+'"><span class="n">'+(i+1)+'</span><span class="x">'+x[0]+'</span><span class="t">'+x[1]+'</span><span class="pr">'+(x[2]==0?'Free':has(k,i)?'Owned':'<span style="display:flex;color:var(--tx2)">'+LOCK+'</span>')+'</span></a>'}).join('');
+}
+function lesView(k,i){var d=D[k],x=d.l[i],h=has(k,i),id=k+'-'+i;$('lb').href='#'+k;$('lt').textContent=x[0];$('lm').textContent=x[1]+' · '+d.t;
+$('lpill').textContent=x[2]==0?'Free preview':h?'Owned':'Locked';$('lplay').innerHTML=h?PLAY:LOCK;
+function one(){buy({item:id,title:x[0],price:x[2],back:id})}
+function act(){if(h)toast('Video plays here once hosting is connected');else one()}
+$('lplay').onclick=act;$('lb2').onclick=act;$('lb2').textContent=h?'Play':'Buy lesson';
+$('lp').innerHTML=h?'<div class="price" style="font-size:20px">'+(x[2]==0?'Free lesson':'Owned')+'</div><div class="cap">Lifetime access</div>':'<div class="price">$'+x[2]+'</div><div class="cap">This lesson · lifetime access</div>';
+$('lall').hidden=h||!!owned[k];$('lall').textContent='Or get all lessons in this format for $'+d.b;
+$('lall').onclick=function(){buy({item:k,title:d.t+' · all lessons',price:d.b,back:id})}}
+function payView(){var c=JSON.parse(ss('dg_cart')||'null');if(!c){location.hash='';return}if(!S){ss('dg_ret','pay');location.hash='signin';return}
+$('pt').textContent=c.title;$('pa').textContent='$'+c.price;$('pk').href='#'+c.back;$('pb').textContent='Pay $'+c.price;$('pb').disabled=false}
+$('pm').onclick=function(e){var b=e.target.closest('button');if(!b)return;pm=b.dataset.m;this.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-checked',x==b)})};
+$('pb').onclick=function(){var c=JSON.parse(ss('dg_cart')||'null'),b=this;if(!c)return;if(!CHECKOUT_URL){toast('Demo: payment is not connected yet');return}
+b.disabled=true;b.textContent='Redirecting…';var h={'Content-Type':'application/json'};if(S&&S.access_token)h.Authorization='Bearer '+S.access_token;
+fetch(CHECKOUT_URL,{method:'POST',headers:h,body:JSON.stringify({item:c.item,method:pm})}).then(function(r){return r.json()}).then(function(j){var u=j.url||j.invoiceUrl;if(!u)throw 0;location.href=u})
+.catch(function(){toast('Could not start payment. Try again.');b.disabled=false;b.textContent='Pay $'+c.price})};
+function authView(){var up=mode=='up',r=ss('dg_ret');$('at').textContent=up?'Create your account':'Welcome back';
+$('an').textContent=r=='pay'?'Your purchase will be linked to your account, so you can watch on any device.':(up?'Use your email and a password of at least 8 characters.':'Sign in to open your courses.');
+$('sb').textContent=up?'Create account':'Sign in';$('tg').textContent=up?'Already have an account? Sign in':'New here? Create an account';
+$('pw').autocomplete=up?'new-password':'current-password';$('fp').hidden=up;$('ig').hidden=!/Instagram|FBAN|FBAV/i.test(navigator.userAgent);['ee','pe','fe'].forEach(function(i){$(i).textContent=''})}
+document.querySelectorAll('[data-p]').forEach(function(b){b.onclick=async function(){var p=this.dataset.p;
+if(!sb){toast('Demo: connect '+(p=='twitter'?'X':p)+' sign-in in Supabase');return}
+var r=await sb.auth.signInWithOAuth({provider:p,options:{redirectTo:location.origin+location.pathname}});if(r.error)$('fe').textContent=r.error.message}});
+function acctView(){if(!S){location.hash='signin';return}$('ae').textContent=mail();var n=Object.keys(owned);
+$('al').innerHTML=n.length?n.map(function(k){var m=/^(\w+)-(\d+)$/.exec(k),f=m?m[1]:k;return '<a href="#'+k+'" style="display:flex;min-height:44px;align-items:center;font-size:15px">'+esc(m?D[f].l[m[2]][0]:D[f].t+' · all lessons')+'</a>'}).join(''):'<div class="note">No purchases yet. Choose a format on the home page.</div>'}
+function matView(){$('ml').innerHTML=Object.keys(MAT).map(function(k){var ok=!!owned[k]||D[k].l.some(function(x,i){return owned[k+'-'+i]});return '<button class="les" data-k="'+k+'" data-ok="'+(ok?1:0)+'" style="min-height:64px"><span style="color:var(--tx2);display:flex">'+PDF+'</span><span class="x">'+MAT[k]+'<br><span class="t">'+esc(D[k].t)+' · PDF</span></span><span class="pr">'+(ok?'Download':'Locked')+'</span></button>'}).join('')}
+$('ml').onclick=function(e){var b=e.target.closest('button');if(!b)return;var k=b.dataset.k;if(b.dataset.ok==1)toast('Download starts here once files are connected');else sheet('Included with purchase','<p>This PDF unlocks when you buy any lesson or the full set in '+esc(D[k].t)+'.</p><a class="buy ctr" href="#'+k+'">See lessons</a>')};
+var LOCAL={doctor:[],community:[]};
+function roomKey(){return room=='doctor'?'doctor:'+(S&&S.user?S.user.id:''):'community'}
+function paidAny(){return Object.keys(owned).length>0}
+async function drawChat(){var list;if(sb){var r=await sb.from('messages').select('body,sender,is_doctor').eq('room',roomKey()).order('created_at').limit(100);list=(r.data||[]).map(function(m){return {w:m.is_doctor?'doc':m.sender==S.user.id?'me':'other',b:m.body}})}else list=LOCAL[room];
+var first=room=='doctor'?'Ask a question about the courses or a clinical case.':'Welcome. Be respectful and keep patient data private.';
+$('cm').innerHTML='<div class="m"><small>'+(room=='doctor'?'Dr. Gordiy':'Community')+'</small>'+first+'</div>'+list.map(function(m){return '<div class="m'+(m.w=='me'?' me':'')+'"><small>'+(m.w=='me'?'You':m.w=='doc'?'Dr. Gordiy':'Member')+'</small>'+esc(m.b)+'</div>'}).join('')+(sb?'':'<div class="note">Demo mode: messages stay on this device.</div>')}
+function supView(){if(!S){ss('dg_ret','support');location.hash='signin';return}
+$('tb').querySelectorAll('button').forEach(function(b){b.setAttribute('aria-selected',b.dataset.r==room)});
+var lock=room=='community'&&!paidAny();$('cl').hidden=!lock;$('cf').hidden=lock;$('cm').hidden=lock;
+$('sn').textContent=room=='doctor'?'Private chat with Dr. Gordiy.':'Dentists who studied here.';
+if(!lock){drawChat();if(sb)poll=setInterval(drawChat,6000)}}
+$('tb').onclick=function(e){var b=e.target.closest('button');if(!b)return;room=b.dataset.r;stopPoll();supView()};
+$('cf').onsubmit=async function(e){e.preventDefault();var t=$('ci').value.trim();if(!t)return;$('ci').value='';
+if(sb){var r=await sb.from('messages').insert({room:roomKey(),body:t});if(r.error){toast('Could not send');return}}else LOCAL[room].push({w:'me',b:t});drawChat()};
+$('tg').onclick=function(){mode=mode=='in'?'up':'in';authView()};
+$('sh').onclick=function(){var p=$('pw'),h=p.type=='password';p.type=h?'text':'password';this.textContent=h?'Hide':'Show'};
+$('fp').onclick=async function(){var e=$('em').value.trim();if(!/^\S+@\S+\.\S+$/.test(e)){$('ee').textContent='Enter your email first.';return}
+if(sb){await sb.auth.resetPasswordForEmail(e)}toast('If the account exists, a reset link is on its way')};
+$('af').onsubmit=async function(ev){ev.preventDefault();var e=$('em').value.trim(),p=$('pw').value,ok=true,b=$('sb');['ee','pe','fe'].forEach(function(i){$(i).textContent=''});
+if(!/^\S+@\S+\.\S+$/.test(e)){$('ee').textContent='Enter a valid email address.';ok=false}
+if(p.length<8){$('pe').textContent='Use at least 8 characters.';ok=false}
+if(!ok)return;var old=b.textContent;b.disabled=true;b.textContent='Please wait…';
+try{if(sb){var r=mode=='up'?await sb.auth.signUp({email:e,password:p}):await sb.auth.signInWithPassword({email:e,password:p});
+if(r.error)throw r.error;if(mode=='up'&&!r.data.session){toast('Check your email to confirm your account');b.disabled=false;b.textContent=old;return}S=r.data.session}
+else{ls('dg_demo_user',e);S={user:{email:e,id:'demo'}}}/* demo mode: no password is stored or checked */
+await loadPurchases();paint();var back=ss('dg_ret');ss('dg_ret',null);location.hash=back||''}
+catch(x){$('fe').textContent=(x&&x.message)||'Something went wrong. Try again.'}
+b.disabled=false;b.textContent=old};
+$('so').onclick=async function(){if(sb)await sb.auth.signOut();ls('dg_demo_user',null);S=null;owned={};paint();location.hash=''};
+$('lf').onsubmit=async function(ev){ev.preventDefault();var e=$('le').value.trim(),k=location.hash.slice(1);$('lr').textContent='';
+if(!/^\S+@\S+\.\S+$/.test(e)){$('lr').textContent='Enter a valid email address.';return}
+try{if(sb){var r=await sb.from('leads').insert({email:e,format:k});if(r.error)throw r.error}}catch(x){$('lr').textContent='Could not save. Try again.';return}
+$('le').value='';toast('Saved. We’ll send you the link.')};
+addEventListener('hashchange',go);
+(async function(){if(sb){var s=await sb.auth.getSession();S=s.data.session;sb.auth.onAuthStateChange(function(_e,s){S=s})}
+else{var e=ls('dg_demo_user');if(e)S={user:{email:e,id:'demo'}}}
+await loadPurchases();paint();var r=ss('dg_ret');if(S&&r){ss('dg_ret',null);location.hash=r}go()})();
 </script></body></html>
