@@ -17,14 +17,24 @@ a{color:inherit;text-decoration:none}
 .dg{font:800 20px Syne,sans-serif;letter-spacing:.02em}
 .eyebrow{font-size:12px;letter-spacing:.26em;color:var(--tx2);text-transform:uppercase}
 .nav{min-height:44px;display:flex;align-items:center;font-size:13px;letter-spacing:.04em;color:var(--tx2)}
-.ln{display:flex;align-items:center;gap:12px;margin-top:clamp(12px,3dvh,28px)}.ln i{width:28px;height:1px;background:rgba(255,255,255,.4)}
-h1{margin:24px 0 0}
-.d{display:block;font-size:12px;font-weight:600;letter-spacing:.5em;text-transform:uppercase;color:var(--tx2);padding-left:3px}
+.ln{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:clamp(12px,3dvh,28px)}.ln i:last-child{transform-origin:right}.ln i{width:28px;height:1px;background:rgba(255,255,255,.4)}
+h1{margin:24px 0 0;text-align:center}
+.d{display:block;font-size:12px;font-weight:600;letter-spacing:.5em;text-transform:uppercase;color:var(--tx2);padding-left:.5em}
 .g{display:block;margin-top:10px;font-family:Syne,sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(40px,14.5vw,64px);line-height:.95;letter-spacing:-.035em;color:var(--tx)}
-.sub{margin:18px 0 0;font-size:14px;line-height:1.55;color:var(--tx2);max-width:270px}
-.cta2{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:8px;font-size:14px;font-weight:600;color:var(--tx);border-bottom:1px solid rgba(255,255,255,.35)}
+.sub{margin:18px auto 0;text-align:center;font-size:14px;line-height:1.55;color:var(--tx2);max-width:270px}
+.cta2{display:flex;width:max-content;align-items:center;gap:8px;min-height:44px;margin:8px auto 0;font-size:14px;font-weight:600;color:var(--tx);border-bottom:1px solid rgba(255,255,255,.35)}
+.g{overflow:hidden;padding:.06em 0}
+.gl{display:inline-block;opacity:0;transform:translateY(110%);filter:blur(6px);animation:gin 1.2s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(.3s + var(--i)*.07s)}
+@keyframes gin{to{opacity:1;transform:none;filter:blur(0)}}
+.d{animation:din 1.5s cubic-bezier(.22,1,.36,1) .1s both}
+@keyframes din{from{opacity:0;letter-spacing:.95em}to{opacity:1;letter-spacing:.5em}}
+.ln i{transform-origin:left;animation:ldraw 1.2s cubic-bezier(.22,1,.36,1) both}
+@keyframes ldraw{from{transform:scaleX(0)}}
+.sub,.cta2{animation:rise .8s cubic-bezier(.22,1,.36,1) .8s both}
+.seen .gl{animation:none;opacity:1;transform:none;filter:none}
+.seen .d,.seen .sub,.seen .cta2,.seen .cw,.seen .ln i{animation:none}
 .stack{display:flex;flex-direction:column;gap:12px;margin-top:clamp(32px,6dvh,52px)}
-.cw{animation:rise .7s cubic-bezier(.22,1,.36,1) both}.cw:nth-child(2){animation-delay:.08s}.cw:nth-child(3){animation-delay:.16s}
+.cw{animation:rise .8s cubic-bezier(.22,1,.36,1) .9s both}.cw:nth-child(2){animation-delay:1.02s}.cw:nth-child(3){animation-delay:1.14s}
 .card{position:relative;display:block;min-height:118px;padding:22px;border-radius:18px;background:linear-gradient(180deg,#110f17,#0a090e);border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.05);transition:transform .25s cubic-bezier(.22,1,.36,1),border-color .25s}
 .card::before{content:"";position:absolute;left:22px;top:-1px;width:32px;height:1px;background:var(--tx);opacity:.7}
 .card:active{transform:scale(.985);border-color:rgba(255,255,255,.22)}
@@ -75,7 +85,7 @@ label{display:block;margin-bottom:8px;font-size:12px;letter-spacing:.14em;text-t
 .ac{margin-top:26px;padding:20px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
 :focus-visible{outline:2px solid var(--tx);outline-offset:3px}
 .toast{position:fixed;left:50%;bottom:calc(120px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);padding:10px 16px;border-radius:12px;font-size:13px;white-space:nowrap;z-index:9}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.gl{opacity:1;transform:none;filter:none}}
 
 .chip{padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:none;color:var(--tx2);font:400 12px Manrope,sans-serif;cursor:pointer;min-height:36px}
 .tile{display:block;padding:16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.02);font-size:13px;line-height:1.4}.tile svg{display:block;margin-bottom:12px;color:var(--tx2)}.tile b{display:block;font-size:14px;margin-bottom:4px}.tile span{color:var(--tx2)}
@@ -104,24 +114,23 @@ a.les{color:inherit}
 <div class="fx" aria-hidden="true"><svg viewBox="0 0 390 844" preserveAspectRatio="none" fill="none"><g stroke="rgba(255,255,255,.04)"><path d="M-20 120C90 90 180 190 280 220S400 170 430 130"/><path d="M-20 380C80 350 190 440 290 470S390 430 430 400"/><path d="M-20 660C100 620 200 730 300 760S400 720 430 690"/></g></svg></div>
 <main id="home" class="wrap">
 <div class="top"><span class="dg">DG</span><a href="#signin" id="navlink" class="nav">Sign in</a></div>
-<div class="ln"><i></i><span class="eyebrow">Courses</span></div>
-<h1><span class="d">Dentist</span><span class="g">Gordiy</span></h1>
-<p class="sub">Clinical education for dentists, filmed under the microscope.</p><a class="cta2" href="#microscope-0">Watch a free lesson <span aria-hidden="true">→</span></a>
+<div class="ln"><i></i><span class="eyebrow" style="padding-left:.26em">Courses</span><i></i></div>
+<h1><span class="d">Dentist</span><span class="g" aria-label="Gordiy"><span class="gl" aria-hidden="true" style="--i:0">G</span><span class="gl" aria-hidden="true" style="--i:1">o</span><span class="gl" aria-hidden="true" style="--i:2">r</span><span class="gl" aria-hidden="true" style="--i:3">d</span><span class="gl" aria-hidden="true" style="--i:4">i</span><span class="gl" aria-hidden="true" style="--i:5">y</span></span></h1>
+<p class="sub">Clinical education for dentists, filmed under the microscope.</p><a class="cta2" href="#formats">Browse lessons <span aria-hidden="true">→</span></a>
 <nav class="stack" id="formats" aria-label="Format">
-<div class="cw"><a class="card" href="#webinars"><h2>Webinars</h2><p class="desc">Live clinical sessions, recorded so you can watch any time.</p><div class="meta">8 lessons · 9h</div></a></div>
-<div class="cw"><a class="card" href="#microscope"><h2>Practical videos from microscope</h2><p class="desc">Every step of the procedure, filmed at high magnification.</p><div class="meta">14 lessons · 6h 20m</div></a></div>
-<div class="cw"><a class="card" href="#cases"><h2>Presentation of cases</h2><p class="desc">Real treatment plans, from diagnosis to follow-up.</p><div class="meta">10 lessons · 4h 40m</div></a></div>
+<div class="cw"><a class="card" href="#webinars"><h2>Webinars</h2><p class="desc">Live clinical sessions, recorded so you can watch any time.</p><div class="meta">4 lessons · 4h 5m</div></a></div>
+<div class="cw"><a class="card" href="#microscope"><h2>Practical videos from microscope</h2><p class="desc">Every step of the procedure, filmed at high magnification.</p><div class="meta">4 lessons · 55m</div></a></div>
+<div class="cw"><a class="card" href="#cases"><h2>Presentation of cases</h2><p class="desc">Real treatment plans, from diagnosis to follow-up.</p><div class="meta">4 lessons · 1h 41m</div></a></div>
 </nav>
-<div class="trust"><button class="chip" data-i="preview">Free preview in every format</button><button class="chip" data-i="refund">30-day refund</button><button class="chip" data-i="life">Lifetime access</button></div>
+<div class="trust"><button class="chip" data-i="price">$10 per lesson</button><button class="chip" data-i="refund">30-day refund</button><button class="chip" data-i="life">Lifetime access</button></div>
 <section class="sec"><div class="eyebrow">Your instructor</div><a class="about" href="#doctor"><span class="av">G</span><div><b>Dr. Gordiy</b><span>Practising dentist. Every course is filmed during real clinical work.</span><span id="cred" style="display:block;margin-top:6px;color:var(--tx)"></span></div></a></section>
 <section class="sec"><div class="eyebrow">Support and materials</div><div class="inc"><a class="tile" href="#materials"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><b>PDF materials</b><span>Checklists and templates for every format</span></a><a class="tile" href="#support"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 20l1-4.5A8 8 0 1 1 21 12z"/></svg><b>Direct support</b><span>Ask Dr. Gordiy or join the community</span></a></div></section>
-<section class="sec"><div class="eyebrow">How it works</div><ul class="steps"><li><a href="#formats"><i></i>Choose a format and watch the free preview</a></li><li><a href="#signin" id="st2"><i></i>Create an account and buy a lesson or a full format</a></li><li><a href="#account"><i></i>Watch on any device and resume where you stopped</a></li></ul></section>
+<section class="sec"><div class="eyebrow">How it works</div><ul class="steps"><li><a href="#formats"><i></i>Choose a format and pick a lesson</a></li><li><a href="#signin" id="st2"><i></i>Create an account and buy the lessons you need</a></li><li><a href="#account"><i></i>Watch on any device and resume where you stopped</a></li></ul></section>
 <div class="foot"><a href="#" data-i="terms">Terms</a><a href="#" data-i="privacy">Privacy</a><a href="#" data-i="refund">Refund policy</a><span>© Dentist Gordiy</span></div>
 </main>
 <main id="fmt" class="wrap" style="padding-bottom:60px" hidden>
 <div class="top" style="justify-content:flex-start;gap:14px"><a class="back" href="#" aria-label="Back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a><span class="eyebrow">Format</span></div>
-<div class="player"><span class="pill">Free preview</span><a class="play glass" id="pp" href="#" aria-label="Play free preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z"/></svg></a><div class="prog">02:14 / 08:40<div><b></b></div></div></div>
-<h3 id="ft"></h3><div class="meta" id="fm" style="letter-spacing:.04em"></div>
+<h3 id="ft" style="margin-top:36px"></h3><div class="meta" id="fm" style="letter-spacing:.04em"></div>
 <div class="eyebrow lh">What you’ll learn</div><ul class="learn" id="lw"></ul>
 <div class="eyebrow lh">Lessons</div><div id="fl"></div>
 <button class="guar" data-i="refund" style="width:100%;color:inherit;font-family:inherit;text-align:left;cursor:pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><span>30-day refund. Lifetime access. Tap for details.</span></button>
@@ -133,7 +142,7 @@ a.les{color:inherit}
 <div class="player"><span class="pill" id="lpill"></span><button class="play glass" id="lplay" aria-label="Play" style="cursor:pointer"></button></div>
 <h3 id="lt"></h3><div class="meta" id="lm" style="letter-spacing:.04em"></div>
 <p class="note" id="ld" style="margin:16px 0 0">Watch the full procedure and the reasoning behind each step, filmed during real clinical work.</p>
-<button class="link" id="lall" style="margin-top:14px"></button>
+
 <div class="bar"><div class="wrap"><div id="lp"></div><button class="buy" id="lb2"></button></div></div>
 </main>
 <main id="auth" class="wrap" hidden>
@@ -190,7 +199,7 @@ a.les{color:inherit}
 <p class="note" style="margin:20px 0">Every course is filmed during real clinical work, under the microscope. No slides without practice: you see the procedure and the reasoning behind each step.</p>
 <p class="note" id="cred2" style="color:var(--tx)"></p>
 <a class="buy ctr" href="#support" style="margin-top:20px">Ask a question</a>
-<a class="buy ghost ctr" href="#microscope-0" style="margin-top:10px">Watch a free lesson</a>
+<a class="buy ghost ctr" href="#formats" style="margin-top:10px">Browse lessons</a>
 </main>
 <div class="sheet" id="shd" hidden><div class="sc" id="shc" role="dialog" aria-modal="true"></div></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
@@ -201,6 +210,8 @@ var TRUST={credentials:''};/* e.g. 'Endodontist · 12 years in practice' — sho
 var sb=(SUPABASE_URL&&window.supabase)?supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY,{auth:{flowType:'pkce'}}):null;
 var S=null,owned={},mode='in',room='doctor',poll=null,pm='card',$=function(i){return document.getElementById(i)};
 var VIEWS=['home','fmt','les','auth','acct','pay','sup','mat','doc'];
+if(ss0('dg_intro'))document.documentElement.classList.add('seen');else setTimeout(function(){try{sessionStorage.setItem('dg_intro','1')}catch(e){}document.documentElement.classList.add('seen')},3000);
+function ss0(k){try{return sessionStorage.getItem(k)}catch(e){return null}}
 function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,v)}catch(e){}return null}
 function ss(k,v){try{if(v===undefined)return sessionStorage.getItem(k);if(v===null)sessionStorage.removeItem(k);else sessionStorage.setItem(k,v)}catch(e){}return null}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
@@ -208,11 +219,11 @@ if(TRUST.credentials){$('cred').textContent=TRUST.credentials;$('cred2').textCon
 var SV=function(p,n){return '<svg width="'+n+'" height="'+n+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'+p+'</svg>'};
 var PLAY=SV('<path d="M8 5l12 7-12 7z" fill="currentColor"/>',22),LOCK=SV('<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',22),CK=SV('<path d="M5 12l5 5 9-10"/>',18),PDF=SV('<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/>',20);
 /* Illustrative content and prices: replace with real ones. Price 0 = free preview lesson. */
-var D={webinars:{t:'Webinars',m:'8 lessons · 9h',b:39,w:['Plan complex cases step by step with a clear decision logic','Apply a digital workflow in your clinic from the next patient','Get answers to real questions from practising dentists'],l:[['Digital workflow in daily practice','58:10',0],['Case planning with the team','1:12:30',19],['Q&A: difficult endodontic cases','1:05:00',19],['Restorative trends review','49:20',15]]},
-microscope:{t:'Practical videos from microscope',m:'14 lessons · 6h 20m',b:55,w:['Work in a comfortable, ergonomic position under magnification','Find and treat difficult canals, including MB2','Build a repeatable routine for access cavities'],l:[['Working position and ergonomics','08:40',0],['Setting up the microscope','11:05',19],['Locating the MB2 canal','19:30',29],['Access cavity under magnification','16:12',25]]},
-cases:{t:'Presentation of cases',m:'10 lessons · 4h 40m',b:45,w:['See complete treatment plans from diagnosis to follow-up','Understand why each decision was made, not only what was done','Reuse the protocols in your own practice'],l:[['Case 1: retreatment of a molar','24:10',0],['Case 2: post and core restoration','31:45',24],['Case 3: anterior composite','27:00',24],['Case 4: follow-up at 12 months','18:30',19]]}};
+var D={webinars:{t:'Webinars',m:'4 lessons · 4h 5m · $10 each',w:['Plan complex cases step by step with a clear decision logic','Apply a digital workflow in your clinic from the next patient','Get answers to real questions from practising dentists'],l:[['Digital workflow in daily practice','58:10',10],['Case planning with the team','1:12:30',10],['Q&A: difficult endodontic cases','1:05:00',10],['Restorative trends review','49:20',10]]},
+microscope:{t:'Practical videos from microscope',m:'4 lessons · 55m · $10 each',w:['Work in a comfortable, ergonomic position under magnification','Find and treat difficult canals, including MB2','Build a repeatable routine for access cavities'],l:[['Working position and ergonomics','08:40',10],['Setting up the microscope','11:05',10],['Locating the MB2 canal','19:30',10],['Access cavity under magnification','16:12',10]]},
+cases:{t:'Presentation of cases',m:'4 lessons · 1h 41m · $10 each',w:['See complete treatment plans from diagnosis to follow-up','Understand why each decision was made, not only what was done','Reuse the protocols in your own practice'],l:[['Case 1: retreatment of a molar','24:10',10],['Case 2: post and core restoration','31:45',10],['Case 3: anterior composite','27:00',10],['Case 4: follow-up at 12 months','18:30',10]]}};
 var MAT={webinars:'Digital workflow checklist',microscope:'Magnification setup checklist',cases:'Case documentation template'};
-var INFO={preview:['Free preview','<p>The first lesson of every format is free. Watch how the work is filmed and explained before you decide to buy.</p><a class="buy ctr" href="#microscope-0">Watch a free lesson</a>'],
+var INFO={price:['$10 per lesson','<p>Every video costs $10. Buy only the lessons you need and keep them in your account for life.</p><a class="buy ctr" href="#formats">Browse lessons</a>'],
 refund:['30-day refund','<p>If a lesson or course is not what you expected, write to support within 30 days of purchase and it will be refunded. Replace this text with your official policy.</p>'],
 life:['Lifetime access','<p>Everything you buy stays in your account. Watch on any device and resume where you stopped.</p>'],
 terms:['Terms of service','<p>Add your terms of service here.</p>'],privacy:['Privacy policy','<p>Add your privacy policy here.</p>']};
@@ -233,7 +244,7 @@ VIEWS.forEach(function(id){$(id).hidden=id!=v});
 if(v=='fmt')fmtView(k);if(v=='les')lesView(m[1],+m[2]);if(v=='auth')authView();if(v=='acct')acctView();if(v=='pay')payView();if(v=='sup')supView();if(v=='mat')matView();
 if(k=='formats')$('formats').scrollIntoView();else window.scrollTo(0,0)}
 function buy(c){ss('dg_cart',JSON.stringify(c));if(!S){ss('dg_ret','pay');mode='in';location.hash='signin';return}location.hash='pay'}
-function fmtView(k){var d=D[k],s=sum(d),o=!!owned[k];$('ft').textContent=d.t;$('fm').textContent=d.m;$('pp').href='#'+k+'-0';
+function fmtView(k){var d=D[k],s=sum(d),o=!!owned[k];$('ft').textContent=d.t;$('fm').textContent=d.m;
 $('lw').innerHTML=d.w.map(function(x){return '<li>'+CK+'<span>'+x+'</span></li>'}).join('');
 $('fl').innerHTML=d.l.map(function(x,i){return '<a class="les'+(has(k,i)?'':' lock')+'" href="#'+k+'-'+i+'"><span class="n">'+(i+1)+'</span><span class="x">'+x[0]+'</span><span class="t">'+x[1]+'</span><span class="pr">'+(x[2]==0?'Free':has(k,i)?'Owned':'<span style="display:flex;color:var(--tx2)">'+LOCK+'</span>')+'</span></a>'}).join('');
 }
@@ -243,8 +254,7 @@ function one(){buy({item:id,title:x[0],price:x[2],back:id})}
 function act(){if(h)toast('Video plays here once hosting is connected');else one()}
 $('lplay').onclick=act;$('lb2').onclick=act;$('lb2').textContent=h?'Play':'Buy lesson';
 $('lp').innerHTML=h?'<div class="price" style="font-size:20px">'+(x[2]==0?'Free lesson':'Owned')+'</div><div class="cap">Lifetime access</div>':'<div class="price">$'+x[2]+'</div><div class="cap">This lesson · lifetime access</div>';
-$('lall').hidden=h||!!owned[k];$('lall').textContent='Or get all lessons in this format for $'+d.b;
-$('lall').onclick=function(){buy({item:k,title:d.t+' · all lessons',price:d.b,back:id})}}
+}
 function payView(){var c=JSON.parse(ss('dg_cart')||'null');if(!c){location.hash='';return}if(!S){ss('dg_ret','pay');location.hash='signin';return}
 $('pt').textContent=c.title;$('pa').textContent='$'+c.price;$('pk').href='#'+c.back;$('pb').textContent='Pay $'+c.price;$('pb').disabled=false}
 $('pm').onclick=function(e){var b=e.target.closest('button');if(!b)return;pm=b.dataset.m;this.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-checked',x==b)})};
